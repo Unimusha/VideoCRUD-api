@@ -20,8 +20,10 @@ import javax.persistence.Table;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.indra.videoclub.entity.Categoria;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -53,9 +55,17 @@ public class Pelicula implements Serializable {
 	private Long idCategoria;
 
 	@Column(name = "titulo", nullable = false)
-
 	private String titulo;
-
+	
+	@Column(name = "descripcion", nullable = true)
+	private String descripcion;
+	
+	@Column(name = "popularidad", nullable = true)
+	private Double popularidad;
+	
+	@Column(name = "poster", nullable = true)
+	private String poster;
+	
 	@Column(name = "esta_disponible", nullable = false)
 	private boolean esta_disponible;
 	
